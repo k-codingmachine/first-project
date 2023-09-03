@@ -7,7 +7,7 @@ SELECT EMP_NAME, LENGTH(EMP_NAME), LENGTHB(EMP_NAME),
     EMAIL, LENGTH(EMAIL), LENGTHB(EMAIL)
 FROM EMPLOYEE;
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
 /*
     * INSTR
