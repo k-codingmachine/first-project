@@ -497,7 +497,7 @@ WHERE BONUS IS NOT NULL;
 SELECT COUNT(DEPT_CODE)
 FROM EMPLOYEE;
 
--- 현재 사원들이 총 몇개의 부서에 분포되어있는지
+-- 현재 사원들이 총 몇개의 부서에 분포되어있는지 조회
 SELECT COUNT(DISTINCT DEPT_CODE)
 FROM EMPLOYEE;
 
