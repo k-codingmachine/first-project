@@ -8,7 +8,6 @@ SELECT EMP_NAME, LENGTH(EMP_NAME), LENGTHB(EMP_NAME),
 FROM EMPLOYEE;
 
 ------------------------------------------------------------------------------
-
 /*
     * INSTR
     문자열로부터 특정 문자의 시작위치를 찾아서 반환
