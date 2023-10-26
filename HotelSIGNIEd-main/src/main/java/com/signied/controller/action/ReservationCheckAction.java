@@ -20,11 +20,12 @@ public class ReservationCheckAction implements Action {
         ReservationVO vo = rDao.selectOneByNum(Integer.parseInt(num));
         System.out.println(vo);
         
-        if (vo.getReserveNum() == Integer.parseInt(num)) {
+        if (vo != null && vo.getReserveNum() == Integer.parseInt(num)) {
            request.setAttribute("reservation", vo);
             url = "ReservationConfrim.jsp";
         } else {
-            url = "index.jsp";
+        	 url ="Confirmfailure.jsp";
+           
         }
 
         request.getRequestDispatcher(url).forward(request, response);
