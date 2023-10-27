@@ -15,10 +15,9 @@ public class ActionFactory {
 		if(command.equals("reservation_inquiry")) {
 			action = new ReservationIuquiryAction();
 		}else if(command.equals("Reservation_Num")) {
-			action = new ReservationCheckAction();
-		}
+			action = new ReservationNumAction();
 		
-
+		}
 		return action;
 	}
 }

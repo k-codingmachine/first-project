@@ -29,6 +29,7 @@
 
 		<form name="frm" method="post" action="HotelServlet">
 			<input type="hidden" name="command" value="Reservation_Num">
+			
 			<div class="col-box">
 				<label for="num" class="input-title">온라인 예약번호*</label><br>
 				<input class="reservationBox" type="text" name="num" size="20"
