@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="UTF-8">
     <title>예약 정보 조회</title>
     <link rel="stylesheet" href="css/main.css">

@@ -23,23 +23,33 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<div style="margin:300px auto 0; width: 1320px;  position:relative; z-index:1000;">
+	<div
+		style="margin: 300px auto 0; width: 1320px; position: relative; z-index: 1000;">
 		<h2>예약 조회</h2>
 		<h5>객실 조회</h5>
-
+	
 		<form name="frm" method="post" action="HotelServlet">
 			<input type="hidden" name="command" value="Reservation_Num">
-			
+
 			<div class="col-box">
-				<label for="num" class="input-title">온라인 예약번호*</label><br>
-				<input class="reservationBox" type="text" name="num" size="20"
+				<label for="num" class="input-title">온라인 예약번호 *</label><span></span><br> <input
+					class="reservationBox" type="text" name="num" size="20"
 					title="예약번호" placeholder="예약 번호를 입력하세요." id="num">
-				<button type="submit" name="confirm" value="확인"
-					onclick="return ReservationCheck()" class="submitButton">
-					<span>확인</span>
-				</button>
-				<br> <br>${message}
+					<div class="alert-message">${message}</div>
+					<hr class="inquiry-hr">
+					
+					<label for="pwds" class="input-title">예약자 이름 *</label><br>
+					<input class="reservationBox" type="text" id="name" size="20"
+						title="예약자 이름" placeholder="예약자 이름을 입력하세요.">
+					<div class="alert-message">${message}</div>
 			</div>
+					
+			<button type="submit" name="confirm" value="확인"
+					onclick="return ReservationCheck()" class="submitButton">
+				<span>확인</span>
+			</button>
+				
+			
 		</form>
 	</div>
 </body>

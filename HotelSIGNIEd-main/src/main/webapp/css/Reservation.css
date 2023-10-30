@@ -23,12 +23,19 @@ h5{
 .col-box {
 	margin:0 auto;
 	width:720px;
-	margin : auto;
-
+	margin-bottom: 10px;
+	
 	
 }
+.center{
+	display:flex;
+	align-items: center;
+	justify-content:center;
+}
 .input-title {
+	font-size: 20px;
     margin-bottom: 10px; 
+    font-weight: bold;
 }
 
 .reservationBox {
@@ -36,24 +43,35 @@ h5{
     vertical-align: top;
     font-size: 16px;
     font-weight: 400;
-    width: 30%; 
+    width: 100%; 
     box-sizing: border-box;
     height:50px;
     padding: 10px;
+    margin-bottom: 10px;
 }
-
+.inquiry-hr{
+	margin: 40px 0px;
+}
 .submitButton{
 	background-color: #ad9e87;
+	width: 360px;
     color: #fff;
     font-size: 18px;
     line-height: 50px;
     border: 0;
     border-radius: 0;
-    transform: translate(-50%, -50%);
-	margin-top: 20px;
+	margin-top: 80px;
+	text-align: center;
+	margin:0 auto;
+	display: block;
+	cursor: pointer;
 }
 .submitButton:hover { 
     background: #685f51; 
+}
+.alert-message{
+	margin-bottom: 20px;
+	color: red;
 }
 label {
     font-weight: 400;
