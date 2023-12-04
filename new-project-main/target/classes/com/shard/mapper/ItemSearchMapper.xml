@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shard.mapper.ItemSearchMapper">
+
+	<select id="getSearchAll" resultType="com.shard.domain.ItemVO">
+		select * from item
+	</select>
+
+	<select id="getHPrice" resultType="com.shard.domain.ItemVO">
+		select * from item order by
+		sale desc
+		limit #{start}, #{amount}
+	</select>
+
+	<select id="getRPrice" resultType="com.shard.domain.ItemVO">
+		select * from item order by
+		sale asc
+		limit #{start}, #{amount}
+	</select>
+
+	<select id="ColorWithPaging" resultType="com.shard.domain.ItemVO" parameterType="com.shard.domain.PageVO">
+         <![CDATA[
+            SELECT *
+            FROM item
+            WHERE SUBSTRING_INDEX(itemName, ' ', -2) LIKE '%'  #{color}  '%'
+            LIMIT #{vo.start}, #{vo.amount};
+        ]]>
+	</select>
+
+
+	<select id="getCategory" resultType="com.shard.domain.ItemVO" parameterType="com.shard.domain.PageVO">
+    <![CDATA[
+        select *
+        from item
+        where categoryNum = #{categoryNum}
+        order by itemNum desc
+        limit #{start}, #{amount}
+    ]]>
+	</select>
+
+<select id="getItemSearchWithPaging" resultType="com.shard.domain.ItemVO" parameterType="com.shard.domain.PageVO">
+    <![CDATA[
+        SELECT *
+        FROM item
+        WHERE itemName LIKE '%'  #{itemName}  '%'
+        ORDER BY itemNum DESC
+        LIMIT #{vo.start}, #{vo.amount}
+    ]]>
+</select>
+
+
+	 <select id="getSearchAllWithPaging" resultType="com.shard.domain.ItemVO">
+        <![CDATA[
+            select *
+            from item
+            order by itemNum desc
+            limit #{start}, #{amount}
+        ]]>
+    </select>
+
+ 	<select id="getTotalCount" resultType="int">
+        <![CDATA[
+            select count(*) from item
+        ]]>
+    </select>
+    
+    	<select id="getItemNameCount" resultType="int">
+        <![CDATA[
+            select count(*) from item
+            where itemName like '%' #{itemName} '%'
+        ]]>
+   		 </select>
+   		 
+   		 <select id="getColorCount" resultType="int">
+        <![CDATA[
+            select count(*) from item
+			WHERE SUBSTRING_INDEX(itemName, ' ', -2) LIKE '%${color}%'
+		 ]]>
+   		 </select>
+   		 
+	   <select id="getItemColorCount" resultType="int">
+    <![CDATA[
+        SELECT COUNT(*)
+        FROM item
+        WHERE (itemName LIKE '%${itemName}%' AND SUBSTRING_INDEX(itemName, ' ', -2) LIKE '%${color}%');
+     ]]>
+</select>
+
+
+
+
+</mapper>

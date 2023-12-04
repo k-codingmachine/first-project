@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.prdlist_rollup{
+
+}
+
+
+.pagination{
+	text-align: center;
+}
+
+.checkbox{
+	text-align: center;
+}
+
+/* 변경된 스타일 */
+.search {
+  position : relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* 상단 여백 조정 */
+}
+
+.searchinput {
+  width: 30%;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
